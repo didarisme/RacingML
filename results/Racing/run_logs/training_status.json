@@ -1,0 +1,29 @@
+{
+    "Driver": {
+        "checkpoints": [
+            {
+                "steps": 166628,
+                "file_path": "results/Racing/Driver/Driver-166628.onnx",
+                "reward": null,
+                "creation_time": 1729362643.38932,
+                "auxillary_file_paths": [
+                    "results/Racing/Driver/Driver-166628.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 166628,
+            "file_path": "results/Racing/Driver.onnx",
+            "reward": null,
+            "creation_time": 1729362643.38932,
+            "auxillary_file_paths": [
+                "results/Racing/Driver/Driver-166628.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.11.0"
+    }
+}

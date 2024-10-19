@@ -1,0 +1,38 @@
+{
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.11.0"
+    },
+    "Driver": {
+        "checkpoints": [
+            {
+                "steps": 0,
+                "file_path": "results/Racing_Imitation2/Driver/Driver-0.onnx",
+                "reward": null,
+                "creation_time": 1729359675.166086,
+                "auxillary_file_paths": [
+                    "results/Racing_Imitation2/Driver/Driver-0.pt"
+                ]
+            },
+            {
+                "steps": 6912,
+                "file_path": "results/Racing_Imitation2/Driver/Driver-6912.onnx",
+                "reward": null,
+                "creation_time": 1729359839.805459,
+                "auxillary_file_paths": [
+                    "results/Racing_Imitation2/Driver/Driver-6912.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 6912,
+            "file_path": "results/Racing_Imitation2/Driver.onnx",
+            "reward": null,
+            "creation_time": 1729359839.805459,
+            "auxillary_file_paths": [
+                "results/Racing_Imitation2/Driver/Driver-6912.pt"
+            ]
+        }
+    }
+}

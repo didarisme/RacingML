@@ -1,0 +1,47 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1729357041",
+        "python_version": "3.9.6 (default, Aug  9 2024, 14:24:13) \n[Clang 16.0.0 (clang-1600.0.26.3)]",
+        "command_line_arguments": "/Users/didar/.local/share/virtualenvs/Racing-qPBq77Ro/bin/mlagents-learn config/Racing.yaml --run-id=TestRacingImitation",
+        "mlagents_version": "0.30.0",
+        "mlagents_envs_version": "0.30.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.11.0",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1729357056"
+    },
+    "total": 15.135708875,
+    "count": 1,
+    "self": 0.016838207999999355,
+    "children": {
+        "run_training.setup": {
+            "total": 0.037314083999999914,
+            "count": 1,
+            "self": 0.037314083999999914
+        },
+        "TrainerController.start_learning": {
+            "total": 15.081556583000001,
+            "count": 1,
+            "self": 0.0010037499999970834,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 15.080515875000001,
+                    "count": 1,
+                    "self": 15.080515875000001
+                },
+                "trainer_threads": {
+                    "total": 2.291000001264365e-06,
+                    "count": 1,
+                    "self": 2.291000001264365e-06
+                },
+                "TrainerController._save_models": {
+                    "total": 3.46670000013205e-05,
+                    "count": 1,
+                    "self": 3.46670000013205e-05
+                }
+            }
+        }
+    }
+}

@@ -22,10 +22,10 @@ behaviors:
         strength: 1.0
       gail:
         strength: 0.8
-        demo_path: Demos/RacingTrackB.demo
+        demo_path: Demos/RacingTrack_0.demo
     behavioral_cloning:
       strength: 1.0
-      demo_path: Demos/RacingTrackB.demo
+      demo_path: Demos/RacingTrack_0.demo
     max_steps: 1000000
     time_horizon: 128
     summary_freq: 10000

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
@@ -10,17 +8,24 @@ public class DriverAgent : Agent
     [SerializeField] private TrackCheckpoints trackCheckpoints;
     [SerializeField] private Transform spawnPosition;
 
+    private float timeElapsedCp;
+
     private CarController carController;
 
     private void Awake()
     {
-        carController = GetComponent<CarController>();   
+        carController = GetComponent<CarController>();
     }
 
     private void Start()
     {
         trackCheckpoints.OnCarCorrectCheckpoint += TrackCheckpoints_OnCarCorrectCheckpoint;
         trackCheckpoints.OnCarWrongCheckpoint += TrackCheckpoints_OnCarWrongCheckpoint;
+    }
+
+    private void Update()
+    {
+        CheckProgress();
     }
 
     private void TrackCheckpoints_OnCarWrongCheckpoint(object sender, TrackCheckpoints.CarCheckPointEventArgs e)
@@ -36,6 +41,7 @@ public class DriverAgent : Agent
         if (e.carTransform == transform)
         {
             AddReward(1f);
+            timeElapsedCp = 0;
         }
     }
 
@@ -89,11 +95,25 @@ public class DriverAgent : Agent
         discreteAction[1] = turnAction;
     }
 
+    private void CheckProgress()
+    {
+        timeElapsedCp += Time.deltaTime;
+
+        if (timeElapsedCp > 5f)
+        {
+            AddReward(-1f);
+            timeElapsedCp = 0f;
+            carController.StopCompletely();
+            EndEpisode();
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.TryGetComponent<Wall>(out Wall wall))
         {
             AddReward(-0.5f);
+            timeElapsedCp = 0f;
             carController.StopCompletely();
             EndEpisode();
         }
